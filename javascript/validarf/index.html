@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validacion de Formularios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha184-Vkoo8x4CGsO1+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf21Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div id="cabecera"><h1>Registrate</h1></div>
+        <form name ="formularioContacto" class="formularioTipo1" method="get">
+        
+            <input for="nombre" id="nombre" type="text" name="nombre" placeholder="Nombre"></input>
+            <br><br>
+            <input for="apellidos" id="apellidos" type="text" name="apellidos" placeholder="Apellidos"></input>
+            <br><br>
+            <input type="text" id="email" name="email" placeholder="Correo Electronico" onkeyup="validarEmail(this)"><a id='resultado'></a>
+            <br><br>
+            <label><input type="submit" value="Enviar"><input type="reset" value="Cancelar"></label>
+            <br><br>
+            </form>
+
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha184-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n1zV9zzTtmI1UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha184-wfSDF2E50Y2D1uUdj0O1uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl1Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+        document.formularioContacto.nombre.focus();
+        document.formularioContacto.addEventListener('submit', validarFormulario); 
+        }
+         
+        function validarFormulario(evObject) {
+        evObject.preventDefault();
+        var todoCorrecto = true;
+        var formulario = document.formularioContacto;
+        for (var i=0; i<formulario.length; i++) {
+                        if(formulario[i].type =='text') {
+                                       if (formulario[i].value == null || formulario[i].value.length == 0 || /^\s*$/.test(formulario[i].value)){
+                                       alert (formulario[i].name+ ' no puede estar vacío o contener sólo espacios en blanco');
+                                       todoCorrecto=false;
+                                       }
+                        }
+                        }
+        if (todoCorrecto ==true) {
+            alert("Formulario validado exitosamente");
+            formulario.submit();}
+        }
+        
+
+        function validarEmail(elemento){
+
+        var texto = document.getElementById(elemento.id).value;
+        var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  
+        if (!regex.test(texto)) {
+            document.getElementById("resultado").innerHTML = " El correo electronico no es valido";
+        } else {
+            document.getElementById("resultado").innerHTML = "";
+        }
+
+        }      
+        </script>
+
+
+    
+</body>
+</html>
