@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgba(159, 241, 127, 0.753);
+}
+
+.menu {
+  list-style: none;
+  background: rgba(255, 123, 0, 0.794);
+  padding: 15px;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.menu li a:hover {
+  -webkit-text-decoration: bold;
+          text-decoration: bold;
+  color: rgba(255, 123, 0, 0.794);
+  background: rgba(159, 241, 127, 0.753);
+  text-transform: uppercase;
+  border-bottom: 5px solid rgba(255, 123, 0, 0.794);
+}
+
+.fuente1 {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.fuente2 {
+  font-family: 'Fondamento', cursive;
+}
+
+.cuerpo {
+  background: rgba(159, 241, 127, 0.753);
+  padding: 15px;
+  max-width: 1024px;
+  margin: auto;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,53 @@
+$color1:  rgba(159, 241, 127, 0.753);
+$color2: rgba(255, 123, 0, 0.794);
+
+*{
+	margin: 0;
+    padding: 0;
+}
+
+body{
+    background: $color1;
+}
+
+.menu{
+    list-style: none;
+	background: $color2;
+	padding: 15px;
+	max-width: 1024px;
+	margin: auto;
+}
+
+.menu li{
+	display: inline-block;
+}
+
+.menu li a{
+	text-decoration: none;
+	color:black;
+	padding: 20px;
+}
+
+.menu li a:hover{
+	text-decoration: bold;
+	color: $color2;
+	background: $color1;
+	text-transform: uppercase;
+	border-bottom: 5px solid $color2;
+}
+
+.fuente1{
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.fuente2{
+    font-family: 'Fondamento', cursive;
+}
+
+.cuerpo{
+	background: $color1;
+	padding: 15px;
+	max-width: 1024px;
+	margin: auto;
+}
+
